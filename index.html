@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Калькулятор</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/script.js"></script>     
+    </head>
+    <body>
+ 
+        <div class="wrapper">
+
+            <div class="h"><center><h>Калькулятор для расчета обоев</h></center></div>
+
+            <div class="room">
+                <p>Выберите, какие размеры для расчета вы желаете указать – размеры комнаты, либо размеры стены (стен):</p>
+                <input type="radio" name="room" class="room" value="size_room" checked id="id_size_room"><label class="label" for="id_size_room">Размеры комнаты</label>
+                <br>
+                <input type="radio" name="room" class="room" value="size_wall" id="id_size_wall"><label class="label" for="id_size_wall">Размеры стены (стен)</label>
+            </div>
+
+            <div class="size_room">
+                <h1>Размеры комнаты:</h1>
+                <div class="row">
+                    <div class="item">
+                        Ширина комнаты
+                    </div>
+                    <div class="item">
+                        <input type="number" name="width_room" value="4" step="0.1" min="0">метры (м)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        Длина комнаты
+                    </div>
+                    <div class="item">
+                        <input type="number" name="length_room" value="4" step="0.1" min="0">метры (м)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        Высота комнаты
+                    </div>
+                    <div class="item">
+                        <input type="number" name="height_room" value="2.7" step="0.1" min="0">метры (м)
+                    </div>
+                </div>
+            </div>
+
+            <div class="size_wall">
+                <h1>Размеры стены (стен):</h1>
+                <div class="items_wall">
+                    <div id="wall" class="wall" num="1">
+                        <div class="h_wall"><h>Стена 1</h></div>
+                        <div class="del_wall" id="1">
+                            &times
+                        </div>
+                        <br><br>
+                        <div class="row">
+                            <div class="item">
+                                Длина стены
+                            </div>
+                            <div class="item">
+                                <input type="number" name="length_wall" value="4" step="0.1" min="0">метры (м)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="item">
+                                Высота стены
+                            </div>
+                            <div class="item">
+                                <input type="number" name="height_wall" value="2.7" step="0.1" min="0">метры (м)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <input class="btn add_wall" type="submit" value="+ Добавить стену">
+
+            </div>
+
+            <hr>
+
+            <div class="windows">
+                <h1>Окна:</h1>
+                <div class="items_window">
+                    <div id="window" class="window" num="1">
+                        <div class="h_window"><h>Окно 1</h></div>
+                        <div class="del_window">
+                            &times
+                        </div>
+                        <br><br>
+                        <div class="row">
+                            <div class="item">
+                                Ширина окна
+                            </div>
+                            <div class="item">
+                                <input type="number" name="width_window" step="0.1" min="0">метры (м)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="item">
+                                Высота окна
+                            </div>
+                            <div class="item">
+                                <input type="number" name="height_window" step="0.1" min="0">метры (м)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input class="btn add_window" type="submit" value="+ Добавить окно">
+
+            </div>
+
+            <hr>
+
+            <div class="doors">
+                <h1>Двери:</h1>
+                <div class="items_door">
+                    <div id="door" class="door" num="1">
+                        <div class="h_door"><h>Дверь 1</h></div>
+                        <div class="del_door">
+                            &times
+                        </div>
+                        <br><br>
+                        <div class="row">
+                            <div class="item">
+                                Ширина двери
+                            </div>
+                            <div class="item">
+                                <input type="number" name="width_door" step="0.1" min="0">метры (м)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="item">
+                                Высота двери
+                            </div>
+                            <div class="item">
+                                <input type="number" name="height_door" step="0.1" min="0">метры (м)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input class="btn add_door" type="submit" value="+ Добавить дверь">
+
+            </div>
+
+            <hr>
+
+            <div class="wallpaper">
+                <h1>Размеры обоев:</h1>
+
+                    <div class="row">
+                        <div class="item">
+                            Ширина рулона
+                        </div>
+                        <div class="item">
+                            <input type="number" name="width_wallpaper" value="53" step="0.1" min="0">сантиметры (см)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="item">
+                            Длина рулона
+                        </div>
+                        <div class="item" style="margin-right: 46px;">
+                            <input type="number" name="length_wallpaper" value="10" step="0.1" min="0">метры (м)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="item">
+                            Повтор рисунка (раппорт)
+                        </div>
+                        <div class="item">
+                            <input type="number" name="repit_wallpaper" value="0" step="0.1" min="0">сантиметры(см)
+                            <br>
+                            <input type="checkbox" id="bias" name="bias"><label class="label" for="bias">со смещением</label>
+                        </div>
+                    </div>
+            </div>
+
+            <center><input class="btn rez" type="submit" value="Рассчитать"></center>
+
+            <div class="result">
+                <hr>
+                <center><i>Введите размеры комнаты, размеры обоев и нажмите кнопку "Рассчитать"</i></center>
+            </div>
+
+
+        </div>
+
+    </body>
+</html>
